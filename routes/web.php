@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\YonetimController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,6 +28,4 @@ Route::middleware([
     })->name('dashboard');
 });
 
-Route::get('/index', function () {
-    return view('include.home');
-});
+Route::get('/index', [YonetimController::class, 'index']);
