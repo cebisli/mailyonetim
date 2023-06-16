@@ -6,7 +6,7 @@
 @section('css')
 @endsection
 
-@section('main') 
+@section('main')
 
 <!--start page wrapper -->
 
@@ -25,14 +25,22 @@
 <!--end breadcrumb-->
 <div class="row">
     <div class="col">
-        <form action="#" method="POST">
+        @if($errors->any())
+            @foreach ($errors->all() as $error)
+                <div class="alert alert-danger">{{$error}}</div>
+            @endforeach
+        @elseif(session('success'))
+            <div class="alert alert-success">{{session('success')}}</div>
+        @endif
+        <form action="{{route('yeni_musteri_post')}}" method="POST">
+            @csrf
             <div class="card">
                 <div class="card-body">
                     <h6 class="mb-0 text-uppercase">Yeni Müşteri</h6>
                         <hr/>
                     <input class="form-control form-control-lg mb-3" type="text" placeholder="Müşteri Adı / Firma Adı" name="adsoyad" aria-label=".form-control-lg example">
                     <input class="form-control form-control-lg mb-3" type="email" placeholder="email" name="mail" aria-label=".form-control-lg example">
-                    <input class="form-control form-control-lg mb-3" type="email" placeholder="telefon" name="telefon" aria-label=".form-control-lg example">
+                    <input class="form-control form-control-lg mb-3" type="text" placeholder="telefon" name="telefon" aria-label=".form-control-lg example">
                     <input class="btn btn-success mb-3" type="submit" name="telefon" value="Yeni Müşteri Ekle" aria-label=".form-control-lg example">
                 </div>
             </div>
@@ -43,5 +51,5 @@
 
 @endsection
 
-@section('js') 
+@section('js')
 @endsection
