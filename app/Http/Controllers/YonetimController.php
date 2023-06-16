@@ -10,4 +10,9 @@ class YonetimController extends Controller
     {
         return view('include.home');
     }
+
+    public function MusteriEkle()
+    {
+        return view('include.musteri-ekle');
+    }
 }

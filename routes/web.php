@@ -28,4 +28,5 @@ Route::middleware([
     })->name('dashboard');
 });
 
-Route::get('/index', [YonetimController::class, 'index']);
+Route::get('/index', [YonetimController::class, 'index'])->name('index');
+Route::get('/musteri-ekle', [YonetimController::class, 'MusteriEkle'])->name('yeni_musteri');
