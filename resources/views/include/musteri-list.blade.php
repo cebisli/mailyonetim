@@ -23,7 +23,13 @@
         </nav>
     </div>
 </div>
-
+@if($errors->any())
+    @foreach ($errors->all() as $error)
+        <div class="alert alert-danger">{{$error}}</div>
+    @endforeach
+@elseif(session('success'))
+    <div class="alert alert-success">{{session('success')}}</div>
+@endif
 <div class="card">
     <div class="card-body">
         <div class="table-responsive">
@@ -46,8 +52,9 @@
                                 <td> {{$musteri->mail}} </td>
                                 <td> {{$musteri->telefon}} </td>
                                 <td> 
-                                    <a class="btn btn-info"> Düzenle </a>
-                                    <a class="btn btn-info"> Sil </a>
+                                    <a class="btn btn-dark text-white" href="{{route('musteri_duzenle', $musteri->id)}}">
+                                        <i class="bx bx-message-square-edit"></i> Düzenle </a>
+                                    <a class="btn btn-danger text-white" href="{{route('musteri_sil', $musteri->id)}}"> <i class="bx bx-trash"></i> Sil </a>
                                 </td>
                             </tr>
                         @endforeach

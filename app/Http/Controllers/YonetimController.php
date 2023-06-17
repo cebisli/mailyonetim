@@ -32,6 +32,40 @@ class YonetimController extends Controller
         return redirect()->route('musteri_listesi')->with('success','Müsteri Başarıyla eklendi...');
     }
 
+    public function MusteriDuzenle($id)
+    {
+        $musteri = Musteriler::whereId($id)->first();
+        if ($musteri)
+            return view('include.musteri-duzenle', compact('musteri'));
+        else
+            return redirect()->route('musteri_listesi');    
+    }
+
+    public function MusteriDuzenlePost(Request $request, $id)
+    {
+        $request->validate([
+            'adsoyad'=>'required',
+            'mail'=>'required|email:rfc,dns'
+            ]);
+        
+        Musteriler::whereId($id)->update([
+                'adsoyad' => $request->adsoyad,
+                'mail' => $request->mail,
+                'telefon' => $request->telefon,
+            ]);    
+
+        return redirect()->route('musteri_listesi')->with('success','Müsteri Başarıyla güncellendi...');
+    }
+
+    public function MusteriSil($id)
+    {
+        $musteri = Musteriler::whereId($id)->first();
+        if ($musteri)
+            Musteriler::whereId($id)->delete();
+        
+        return redirect()->route('musteri_listesi')->with('success','Müsteri Başarıyla silindi...');    
+    }
+
     public function MusteriListe()
     {
         $musteriler = Musteriler::all();

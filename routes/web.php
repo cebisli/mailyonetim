@@ -32,3 +32,9 @@ Route::get('/index', [YonetimController::class, 'index'])->name('index');
 Route::get('/musteri-ekle', [YonetimController::class, 'MusteriEkle'])->name('yeni_musteri');
 Route::post('/musteri-ekle-post', [YonetimController::class, 'MusteriEklePost'])->name('yeni_musteri_post');
 Route::get('/musteri-listesi', [YonetimController::class, 'MusteriListe'])->name('musteri_listesi');
+
+Route::get('/musteri-duzenle/{id}', [YonetimController::class, 'MusteriDuzenle'])->name('musteri_duzenle');
+Route::post('/musteri-duzenle-post/{id}', [YonetimController::class, 'MusteriDuzenlePost'])->name('musteri_duzenle_post');
+
+
+Route::get('/musteri-sil/{id}', [YonetimController::class, 'MusteriSil'])->name('musteri_sil');
