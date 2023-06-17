@@ -419,7 +419,7 @@
                         <div class="menu-title">Mail Yönetimi</div>
                     </a>
                     <ul>
-                        <li> <a href="#"><i class="bx bx-right-arrow-alt"></i>Toplu Mail Oluşturma</a>
+                        <li> <a href="{{route('toplu_mail_olusturma')}}"><i class="bx bx-right-arrow-alt"></i>Toplu Mail Oluşturma</a>
                         </li>
                         <li> <a href="#"><i class="bx bx-right-arrow-alt"></i>Mail Takini</a>
                         </li>                        

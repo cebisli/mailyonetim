@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\YonetimController;
+use App\Http\Controllers\MailController;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,6 +36,8 @@ Route::get('/musteri-listesi', [YonetimController::class, 'MusteriListe'])->name
 
 Route::get('/musteri-duzenle/{id}', [YonetimController::class, 'MusteriDuzenle'])->name('musteri_duzenle');
 Route::post('/musteri-duzenle-post/{id}', [YonetimController::class, 'MusteriDuzenlePost'])->name('musteri_duzenle_post');
-
-
 Route::get('/musteri-sil/{id}', [YonetimController::class, 'MusteriSil'])->name('musteri_sil');
+
+
+Route::get('/toplu-mail-olustur', [MailController::class, 'index'])->name('toplu_mail_olusturma');
+Route::post('/mail-olustur-post', [MailController::class, 'MailEklePost'])->name('mail_olustur_post');
