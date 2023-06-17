@@ -14,6 +14,9 @@
 	<link href="{{asset("/")}}assets/plugins/highcharts/css/highcharts.css" rel="stylesheet" />
 	<link href="{{asset("/")}}assets/plugins/vectormap/jquery-jvectormap-2.0.2.css" rel="stylesheet" />
 	<link href="{{asset("/")}}assets/plugins/metismenu/css/metisMenu.min.css" rel="stylesheet" />
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/fontawesome.min.css" integrity="sha512-SgaqKKxJDQ/tAUAAXzvxZz33rmn7leYDYfBP+YoMRSENhf3zJyx3SBASt/OfeQwBHA1nxMis7mM3EV/oYT6Fdw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 	<!-- loader-->
 	<link href="{{asset("/")}}assets/css/pace.min.css" rel="stylesheet" />
 	<script src="{{asset("/")}}assets/js/pace.min.js"></script>

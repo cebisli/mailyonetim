@@ -29,6 +29,12 @@ class YonetimController extends Controller
             'telefon' => $request->telefon,
         ]);
 
-        return redirect()->route('yeni_musteri')->with('success','Müsteri Başarıyla eklendi...');
+        return redirect()->route('musteri_listesi')->with('success','Müsteri Başarıyla eklendi...');
+    }
+
+    public function MusteriListe()
+    {
+        $musteriler = Musteriler::all();
+        return view('include.musteri-list',compact('musteriler'));
     }
 }

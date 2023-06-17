@@ -41,7 +41,7 @@
                     <input class="form-control form-control-lg mb-3" type="text" placeholder="Müşteri Adı / Firma Adı" name="adsoyad" aria-label=".form-control-lg example">
                     <input class="form-control form-control-lg mb-3" type="email" placeholder="email" name="mail" aria-label=".form-control-lg example">
                     <input class="form-control form-control-lg mb-3" type="text" placeholder="telefon" name="telefon" aria-label=".form-control-lg example">
-                    <input class="btn btn-success mb-3" type="submit" name="telefon" value="Yeni Müşteri Ekle" aria-label=".form-control-lg example">
+                    <input class="btn btn-success mb-3" type="submit" value="Yeni Müşteri Ekle" aria-label=".form-control-lg example">
                 </div>
             </div>
         </form>
