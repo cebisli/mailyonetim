@@ -1,4 +1,4 @@
-<!--start header wrapper-->	
+<!--start header wrapper-->
 <div class="header-wrapper">
     <!--start header -->
     <header>
@@ -393,13 +393,6 @@
         <nav class="topbar-nav">
             <ul class="metismenu" id="menu">
                 <li>
-                    <a href="{{route('index')}}">
-                        <div class="parent-icon"><i class='bx bx-home-circle'></i>
-                        </div>
-                        <div class="menu-title">AnaSayfa</div>
-                    </a>                    
-                </li>
-                <li>
                     <a href="javascript:;" class="has-arrow">
                         <div class="parent-icon"><i class="bx bx-category"></i>
                         </div>
@@ -409,9 +402,9 @@
                         <li> <a href="{{route('musteri_listesi')}}"><i class="bx bx-right-arrow-alt"></i>Müşteri Listesi</a>
                         </li>
                         <li> <a href="{{route('yeni_musteri')}}"><i class="bx bx-right-arrow-alt"></i>Yeni Müşteri</a>
-                        </li>                        
+                        </li>
                     </ul>
-                </li>              
+                </li>
                 <li>
                     <a class="has-arrow" href="javascript:;">
                         <div class="parent-icon"><i class='bx bx-bookmark-heart'></i>
@@ -419,17 +412,17 @@
                         <div class="menu-title">Mail Yönetimi</div>
                     </a>
                     <ul>
-                        <li> <a href="{{route('toplu_mail_olusturma')}}"><i class="bx bx-right-arrow-alt"></i>Toplu Mail Oluşturma</a>
+                        <li> <a href="{{route('toplu_mail_olusturma')}}"><i class="bx bx-right-arrow-alt"></i>Mail Oluşturma</a>
                         </li>
-                        <li> <a href="#"><i class="bx bx-right-arrow-alt"></i>Mail Takini</a>
-                        </li>                        
+                        <li> <a href="{{route('mail_listesi')}}"><i class="bx bx-right-arrow-alt"></i>Gönderilen Mailler</a>
+                        </li>
                     </ul>
                 </li>
                 <li>
-                    <a href="javascript:;">                        
+                    <a href="javascript:;">
                         <div class="menu-title">API Bilgileri</div>
-                    </a>                    
-                </li>               
+                    </a>
+                </li>
             </ul>
         </nav>
     </div>

@@ -17,7 +17,9 @@ class Mailyonetim extends Migration
             $table->id();
             $table->string('baslik');
             $table->longText('metin');
-            $table->enum('tema', ['1','2','3'])->default(1);
+            $table->unsignedBigInteger('kisi_id');
+
+            $table->foreign('kisi_id')->references('id')->on('musteriler')->onDelete('cascade');
             $table->timestamps();
         });
     }

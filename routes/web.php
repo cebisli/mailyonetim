@@ -4,17 +4,6 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\YonetimController;
 use App\Http\Controllers\MailController;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
 Route::get('/', function () {
     return view('welcome');
 });
@@ -41,3 +30,5 @@ Route::get('/musteri-sil/{id}', [YonetimController::class, 'MusteriSil'])->name(
 
 Route::get('/toplu-mail-olustur', [MailController::class, 'index'])->name('toplu_mail_olusturma');
 Route::post('/mail-olustur-post', [MailController::class, 'MailEklePost'])->name('mail_olustur_post');
+
+Route::get('/mail_listesi', [MailController::class, 'MailListe'])->name('mail_listesi');

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Musteriler;
+use Mail;
 
 class YonetimController extends Controller
 {
@@ -38,7 +39,7 @@ class YonetimController extends Controller
         if ($musteri)
             return view('include.musteri-duzenle', compact('musteri'));
         else
-            return redirect()->route('musteri_listesi');    
+            return redirect()->route('musteri_listesi');
     }
 
     public function MusteriDuzenlePost(Request $request, $id)
@@ -47,12 +48,12 @@ class YonetimController extends Controller
             'adsoyad'=>'required',
             'mail'=>'required|email:rfc,dns'
             ]);
-        
+
         Musteriler::whereId($id)->update([
                 'adsoyad' => $request->adsoyad,
                 'mail' => $request->mail,
                 'telefon' => $request->telefon,
-            ]);    
+            ]);
 
         return redirect()->route('musteri_listesi')->with('success','Müsteri Başarıyla güncellendi...');
     }
@@ -62,8 +63,8 @@ class YonetimController extends Controller
         $musteri = Musteriler::whereId($id)->first();
         if ($musteri)
             Musteriler::whereId($id)->delete();
-        
-        return redirect()->route('musteri_listesi')->with('success','Müsteri Başarıyla silindi...');    
+
+        return redirect()->route('musteri_listesi')->with('success','Müsteri Başarıyla silindi...');
     }
 
     public function MusteriListe()

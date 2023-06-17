@@ -38,11 +38,13 @@
                 <div class="card-body">
                     <h6 class="mb-0 text-uppercase">Yeni Mail Oluştur</h6>
                         <hr/>
+                    <select class="form-control form-control-lg mb-3" name="musteri_id" aria-label=".form-control-lg example">
+                        @foreach($musteriler as $musteri)
+                            <option value="{{$musteri->id}}">{{$musteri->adsoyad}}</option>
+                        @endforeach
+                    </select>
                     <input class="form-control form-control-lg mb-3" type="text" name="baslik" aria-label=".form-control-lg example">
                     <textarea id="mytextarea" name="metin"></textarea>
-                    <select class="form-control form-control-lg mb-3" name="tema" aria-label=".form-control-lg example">
-                        <option value="1">Şablon 1</option>
-                    </select>
                     <input class="btn btn-success mb-3" type="submit" value="Yeni Mail Oluştur" aria-label=".form-control-lg example">
                 </div>
             </div>
